@@ -1,12 +1,33 @@
 {
   "name": "base-template",
   "version": "1.0.0",
-  "description": "",
+  "description": "A basic template, including husky, commitlint, prettier",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "npm:up": "npx npm-check-updates",
+    "clean": "npx rimraf node_modules",
+    "clean:cache": "npx rimraf node_modules/.cache",
+    "lint:format": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,less,vue,html,md}\"",
+    "lint:lint-staged": "lint-staged -c ./.husky/lintstagedrc.js",
+    "release": "bumpp --commit \"release: release v%s\" --push --tag && npm publish",
+    "prepare": "husky install"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "template",
+    "husky",
+    "commitlint",
+    "eslint",
+    "stylelint",
+    "prettier"
+  ],
+  "author": "Archer <502431556@qq.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
+    "bumpp": "^7.1.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.1",
+    "prettier": "^2.6.2"
+  }
 }
