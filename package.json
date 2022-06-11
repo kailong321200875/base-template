@@ -16,8 +16,6 @@
     "template",
     "husky",
     "commitlint",
-    "eslint",
-    "stylelint",
     "prettier"
   ],
   "author": "Archer <502431556@qq.com>",
